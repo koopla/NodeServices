@@ -19,7 +19,12 @@
 
   <Sdk Name="Yarn.MSBuild" Version="1.15.2" />
 
-  <Target Name="YarnInstall">
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <YarnBuildCommand>run webpack --mode development</YarnBuildCommand>
+    <YarnBuildCommand Condition="'$(Configuration)' == 'Release'">run webpack --mode production</YarnBuildCommand>
+  </PropertyGroup>
+
+  <Target Name="YarnInstall" BeforeTargets="YarnBuild" Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <Message Text="Running yarn install on $(MSBuildProjectFile)" Importance="High" />
     <Yarn Command="install --mutex network" />
   </Target>
