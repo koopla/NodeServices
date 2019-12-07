@@ -8,9 +8,12 @@ using System.Threading;
 using Microsoft.AspNetCore.NodeServices.HostingModels;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging.Abstractions;
+
+#if NETCOREAPP
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+#endif
 
 namespace Microsoft.AspNetCore.NodeServices
 {
@@ -40,6 +43,9 @@ namespace Microsoft.AspNetCore.NodeServices
             InvocationTimeoutMilliseconds = DefaultInvocationTimeoutMilliseconds;
             WatchFileExtensions = (string[])DefaultWatchFileExtensions.Clone();
 
+            ProjectPath = Directory.GetCurrentDirectory();
+
+            #if NETCOREAPP
             var hostEnv = serviceProvider.GetService<IWebHostEnvironment>();
             if (hostEnv != null)
             {
@@ -48,16 +54,13 @@ namespace Microsoft.AspNetCore.NodeServices
                 ProjectPath = hostEnv.ContentRootPath;
                 EnvironmentVariables["NODE_ENV"] = hostEnv.IsDevelopment() ? "development" : "production"; // De-facto standard values for Node
             }
-            else
-            {
-                ProjectPath = Directory.GetCurrentDirectory();
-            }
 
             var applicationLifetime = serviceProvider.GetService<IHostApplicationLifetime>();
             if (applicationLifetime != null)
             {
                 ApplicationStoppingToken = applicationLifetime.ApplicationStopping;
             }
+            #endif
 
             // If the DI system gives us a logger, use it. Otherwise, set up a default one.
             var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
