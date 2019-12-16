@@ -6,9 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="Microsoft.AspNetCore.NodeServices" />
-    <Reference Include="Microsoft.AspNetCore.TestHost" />
-    <Reference Include="Microsoft.Extensions.Logging.Testing" />
+    <ProjectReference Include="..\src\Microsoft.AspNetCore.NodeServices.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="js\**\*" />
   </ItemGroup>
 
