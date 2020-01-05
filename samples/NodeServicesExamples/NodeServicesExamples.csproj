@@ -7,17 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="Microsoft.AspNetCore.Mvc" />
-    <Reference Include="Microsoft.AspNetCore.Diagnostics" />
-    <Reference Include="Microsoft.AspNetCore.Hosting" />
-    <Reference Include="Microsoft.AspNetCore.NodeServices" />
-    <Reference Include="Microsoft.AspNetCore.Server.IISIntegration" />
-    <Reference Include="Microsoft.AspNetCore.Server.Kestrel" />
-    <Reference Include="Microsoft.AspNetCore.StaticFiles" />
-    <Reference Include="Microsoft.Extensions.Logging.Debug" />
-    <Reference Include="Microsoft.Extensions.Logging.Console" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Microsoft.AspNetCore.NodeServices.csproj" />
+  </ItemGroup>
+    
   <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
     <Exec Command="npm install" />
   </Target>
