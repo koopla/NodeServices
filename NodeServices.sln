@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.AspNetCore.NodeSe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{09087391-8267-4A80-91F6-D989A6E1BC76}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NodeServicesExamples", "samples\NodeServicesExamples\NodeServicesExamples.csproj", "{58FEE7B4-8EDC-4879-8D90-28DC7E600E79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C99F4DD1-AD81-41A4-9269-CAF3CF7D36E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C99F4DD1-AD81-41A4-9269-CAF3CF7D36E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C99F4DD1-AD81-41A4-9269-CAF3CF7D36E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58FEE7B4-8EDC-4879-8D90-28DC7E600E79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58FEE7B4-8EDC-4879-8D90-28DC7E600E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58FEE7B4-8EDC-4879-8D90-28DC7E600E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58FEE7B4-8EDC-4879-8D90-28DC7E600E79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -34,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3EC4F4E3-52F7-4740-BAFF-4D1F655F0568} = {5A9D4764-7C5C-42B3-8E96-796F8B666B6B}
 		{C99F4DD1-AD81-41A4-9269-CAF3CF7D36E4} = {0B9768B2-35A5-419F-A0F1-16A66A286B2B}
+		{58FEE7B4-8EDC-4879-8D90-28DC7E600E79} = {09087391-8267-4A80-91F6-D989A6E1BC76}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {67704825-1014-42BF-9E4D-24C4A0E57374}
